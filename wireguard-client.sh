@@ -74,6 +74,13 @@ function installClient(){
     LOCALFILE='/etc/wireguard/wg0.conf'
 
     scp $REMOTEUSER@$REMOTEIP:$REMOTEFILE $LOCALFILE
-
     ExitCode=$?
+
+    systemctl enable wg-quick@wg0 --now
+
+    sleep 3
+
+    NowIP=$(curl ifconfig.me)
+    echo "Votre IP Publique est maintenant : $NowIP"
+
 }
