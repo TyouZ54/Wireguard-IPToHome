@@ -3,6 +3,6 @@
 
 Permet la mise en place d'un serveur Wireguard afin de transporter son IP public depuis un VPS vers un serveur à la maison ou autre part
 
-Comment l'utiliser ? 
- - Côté serveur (Reçevant les IPs de l'ISP) :
+Comment l'installer ? 
+ - Côté serveur (Reçevant les IPs de l'ISP) : curl https://raw.githubusercontent.com/TyouZ54/Wireguard-IPToHome/main/wireguard-server.sh | sudo bash
  - Côté client (Serveur chez soit) : 
