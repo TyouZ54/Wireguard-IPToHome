@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 NameOfProgram="WG-IPToHome"
 
 function isRoot() {
@@ -242,7 +241,7 @@ initialCheck
 # Vérification de si Wireguard est déjà installé
 if [[ -e /etc/wireguard/params ]]; then
 	source /etc/wireguard/params
-	echo "WireGuard déjà installé."
+	echo "ERREUR: WireGuard déjà installé."
 else
 	installWireGuard
 fi
