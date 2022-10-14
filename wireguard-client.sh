@@ -44,7 +44,8 @@ function checkOS() {
 
 function installQuestions() {
 
-    
+    read -rp "Adresse IPv4 publique du serveur distant: " -e REMOTEIP
+    read -rp "Nom d'utilisateur du serveur distant: " -e REMOTEUSER
 
 }
 
