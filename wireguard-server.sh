@@ -7,19 +7,21 @@ NC='\033[0m'
 
 function isRoot() {
 	if [ "${EUID}" -ne 0 ]; then
-		echo "Vous devez executer ce script en tant que root."
+		echo "${ROUGE}[ERREUR]${NC} Vous devez executer ce script en tant que root."
 		exit 1
+	else
+		echo "${VERT}[OK]${NC} Execution du script en tant que root..."
 	fi
 }
 
 function checkVirt() {
 	if [ "$(systemd-detect-virt)" == "openvz" ]; then
-		echo "OpenVZ n'est pas supporté."
+		echo "${ROUGE}[ERREUR]${NC} OpenVZ n'est pas supporté."
 		exit 1
 	fi
 
 	if [ "$(systemd-detect-virt)" == "lxc" ]; then
-		echo "LXC n'est pas supporté."
+		echo "${ROUGE}[ERREUR]${NC} LXC n'est pas supporté."
 		exit 1
 	fi
 }
